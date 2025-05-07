@@ -6,7 +6,7 @@ export default function BookForm({ editableBook, onSave, onClose }) {
 
   useEffect(() => {
     if (editableBook) {
-      setForm({ ...editableBook }); // incluir el id también
+      setForm({ ...editableBook }); 
     }
   }, [editableBook]);
 
@@ -15,14 +15,14 @@ export default function BookForm({ editableBook, onSave, onClose }) {
     if (Object.values(form).some((v) => String(v).trim() === "")) return;
 
 
-    onSave(form);  // Puede ser addBook o editBook según el flujo
+    onSave(form);  
     setMessage(editableBook ? "Cambios guardados" : "Libro agregado");
 
     setTimeout(() => {
       setMessage("");
       setForm({ title: "", author: "", genre: "", year: "" });
       onClose();
-    }, 1500); // muestra el mensaje por 1.5 segundos
+    }, 1500); 
   };
 
   return (
