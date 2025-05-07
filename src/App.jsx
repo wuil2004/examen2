@@ -23,7 +23,7 @@ function App() {
   };
 
   const handleSave = (bookData) => {
-    if (editableBook) {
+    if (editableBook && bookData.id) {
       editBook(bookData);
     } else {
       addBook(bookData);
@@ -31,9 +31,11 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Gestor de Libros</h1>
-      <button onClick={handleAdd}>Agregar nuevo libro</button>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Gestor de Libros</h1>
+      <button onClick={handleAdd} className="bg-green-600 text-white px-3 py-1 rounded mb-4">
+        Agregar nuevo libro
+      </button>
       <BookFilters filters={filters} setFilters={setFilters} />
       <BookList filters={filters} onEdit={handleEdit} />
       <ReadBooks />
