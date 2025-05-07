@@ -78,8 +78,11 @@ button.secondary:hover {
 .book-card.read {
   border-left-color: #48bb78;
   opacity: 0.8;
+  background-color: #f0fff4;
 }
 
 .book-card button {
   margin-left: 8px;
 }
+
+

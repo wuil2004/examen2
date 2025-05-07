@@ -7,9 +7,15 @@ export default function ReadBooks() {
   return (
     <div>
       <h2>Libros leídos</h2>
-      {readBooks.map(book => (
-        <div key={book.id}>{book.title} - {book.author}</div>
-      ))}
+      {readBooks.length === 0 ? (
+        <p>No hay libros leídos aún.</p>
+      ) : (
+        readBooks.map(book => (
+          <div key={book.id} className="book-card read">
+            <strong>{book.title}</strong> - {book.author} ({book.year}) [{book.genre}]
+          </div>
+        ))
+      )}
     </div>
   );
 }
