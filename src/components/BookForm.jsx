@@ -36,10 +36,10 @@ export default function BookForm({ editableBook, onSave, onClose }) {
         <input placeholder="Año" value={form.year} onChange={e => setForm({ ...form, year: e.target.value })} />
 
         <div className="flex gap-2 mt-2">
-          <button type="submit" className="bg-blue-500 text-white px-2 py-1 rounded">
+          <button type="submit" className="primary">
             {editableBook ? "Guardar cambios" : "Agregar libro"}
           </button>
-          <button type="button" className="bg-gray-400 text-white px-2 py-1 rounded" onClick={onClose}>
+          <button type="button" className="secondary" onClick={onClose}>
             Cancelar
           </button>
         </div>

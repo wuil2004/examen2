@@ -31,15 +31,14 @@ function App() {
   };
 
   return (
-    <div className="p-4">
+    <div className="container">
       <h1 className="text-2xl font-bold mb-4">Gestor de Libros</h1>
-      <button onClick={handleAdd} className="bg-green-600 text-white px-3 py-1 rounded mb-4">
+      <button onClick={handleAdd} className="primary mb-4">
         Agregar nuevo libro
       </button>
       <BookFilters filters={filters} setFilters={setFilters} />
       <BookList filters={filters} onEdit={handleEdit} />
       <ReadBooks />
-
       {showForm && (
         <BookForm
           editableBook={editableBook}
@@ -49,6 +48,7 @@ function App() {
       )}
     </div>
   );
+  
 }
 
 export default App;
